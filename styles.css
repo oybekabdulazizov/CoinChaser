@@ -13,8 +13,8 @@ body {
 }
 
 #scoreline {
-    color: red; 
-    background: yellowgreen; 
+    color: white; 
+    background: black; 
     margin: 0;
     display: flex;
     justify-content: space-around;
@@ -30,7 +30,7 @@ h3 {
 }
 
 #game-arena {
-    background-color: grey; 
+    background-color: teal; 
     width: 100%;
     height: 100%;
 }
