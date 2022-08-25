@@ -25,7 +25,7 @@ const moveCoin = () => {
     const left = x + coinWidth <= gameArena.offsetWidth ? x : gameArena.offsetWidth - coinWidth;
     let top = y + coinHeight <= gameArena.offsetHeight ? y : gameArena.offsetHeight - coinHeight;
     top = y >= 100 ? y : y + 100;
-    
+
     coin.style.left = `${left}px`;
     coin.style.top = `${top}px`;
 }
@@ -45,11 +45,9 @@ window.addEventListener("keydown", function (e) {
 
 const moveUp = () => {
     const currentTop = extractPosition(pStyles.top);
-    console.log(`offsetHeight: ${gameArena.offsetHeight}`);
     if (currentTop > 100) {
         pacman.style.transform = "rotate(-90deg)";
         pacman.style.top = `${currentTop - 20}px`;
-        console.log(`currentTop: ${currentTop}`)
     }
 }
 
