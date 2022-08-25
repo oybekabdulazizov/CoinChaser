@@ -3,6 +3,8 @@ const coin = document.querySelector("#coin");
 const gameArena = document.querySelector("#game-arena");
 const pStyles = getComputedStyle(pacman);
 const cStyles = getComputedStyle(coin);
+const score = document.querySelector("#score");
+let scoreCounter = 0;
 
 const isTouching = (a, b) => {
     const pDetails = a.getBoundingClientRect(),
@@ -40,6 +42,12 @@ window.addEventListener("keydown", function (e) {
         moveRight();
     } else if (e.key === "ArrowLeft") {
         moveLeft();
+    }
+
+    if (isTouching(pacman, coin)) {
+        scoreCounter += 10;
+        score.innerHTML = `Score: ${scoreCounter}`;
+        moveCoin();
     }
 })
 
