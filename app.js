@@ -17,6 +17,20 @@ const isTouching = (a, b) => {
 
 const extractPosition = position => parseInt(position.slice(0, -2));
 
+const moveCoin = () => {
+    const coinWidth = extractPosition(cStyles.width);
+    const coinHeight = extractPosition(cStyles.height);
+    const x = Math.floor(Math.random() * gameArena.offsetWidth);
+    const y = Math.floor(Math.random() * gameArena.offsetHeight);
+    const left = x + coinWidth <= gameArena.offsetWidth ? x : gameArena.offsetWidth - coinWidth;
+    let top = y + coinHeight <= gameArena.offsetHeight ? y : gameArena.offsetHeight - coinHeight;
+    top = y >= 100 ? y : y + 100;
+    
+    coin.style.left = `${left}px`;
+    coin.style.top = `${top}px`;
+}
+moveCoin();
+
 window.addEventListener("keydown", function (e) {
     if (e.key === "ArrowDown") {
         moveDown();
